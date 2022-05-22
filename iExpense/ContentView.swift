@@ -59,9 +59,6 @@ struct ContentView: View {
                                 Text(item.amount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
                                     .modifier(DollarAmountFormatted(amount: item.amount))
                             }
-                            .accessibilityElement()
-                            .accessibilityLabel("\(item.name), \(item.amount.formatted(.currency(code: Locale.current.currencyCode ?? "USD")))")
-                            .accessibilityHint(item.type)
                         }
                     }
                     .onDelete(perform: removeItems)
